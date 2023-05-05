@@ -1,0 +1,22 @@
+.filter {
+  height: 100%;
+  margin-right: 0.25rem;
+  transition: all 0.3ms ease;
+  min-width: 250px;
+  max-width: 15%;
+}
+
+.filter-list {
+  li:nth-of-type(2n) {
+    .filter-item {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.filter-item {
+  padding: 0 6px;
+  border-radius: 5px;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,25 @@
+.shift {
+  width: 100%;
+  margin-bottom: 3px;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  margin-top: 0.125rem;
+  padding: 0.125rem;
+  font-size: 1.1rem;
+
+  & > div {
+    margin: auto 0;
+    display: inline-flex;
+  }
+}
+
+.shift-icon {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0.25rem auto 0;
+}
+
+.shift-desc {
+  white-space: nowrap;
+}
