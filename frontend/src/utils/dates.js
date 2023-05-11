@@ -1,6 +1,9 @@
 import { DAYS_IN_MONTH, Month } from './const';
 
 const locale = 'ru-RU';
+const option = { year: 'numeric', day: 'numeric', month: 'numeric' };
+
+export const toLocaleString = (date, option = { weekday: 'short', day: 'numeric', month: 'numeric' }) => new Date(date).toLocaleString(locale, option);
 
 const isLeapYear = (year) => !((year % 4) || (!(year % 100) && (year % 400)));
 
@@ -47,7 +50,8 @@ export const getMonthDate = ({ year, month }) => {
   let day = 1;
 
   for (let i = 0; i < daysInMonth; i += 1) {
-    result[i] = new Date(year, month, day).toISOString();
+    const [d, m, y] = toLocaleString(new Date(year, month, day), option).split('.');
+    result[i] = `${y}.${m}.${d}`;
     day += 1;
   }
 
@@ -59,9 +63,9 @@ export const getWeekDate = ({ year, month, day }) => {
   const date = new Date(year, month, day);
   const today = getDayOfWeek(date);
   let weeksDay = Number(day) - today;
-
   for (let i = 0; i < 7; i += 1) {
-    result[i] = new Date(year, month, weeksDay).toISOString();
+    const [d, m, y] = toLocaleString(new Date(year, month, weeksDay), option).split('.');
+    result[i] = `${y}.${m}.${d}`;
     weeksDay += 1;
   }
 
@@ -87,7 +91,5 @@ export const isDurationInSame = (start, end) => {
   const endStamp = Number(endHours) * 60 + Number(endMinute);
   return startStamp < endStamp;
 };
-
-export const toLocaleString = (date, option = { weekday: 'short', day: 'numeric', month: 'numeric' }) => new Date(date).toLocaleString(locale, option);
 
 export const toHoursFormat = (hours) => hours.slice(0, -3);
