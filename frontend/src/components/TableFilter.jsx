@@ -13,7 +13,7 @@ import {useTranslation} from "react-i18next";
 const TableFilter = () => {
   const dispatch = useDispatch();
   const locations = useSelector(getLocation);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState(null);
   const [results, setResults] = useState(locations);
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
   const { t } = useTranslation('translation', { keyPrefix: 'schedule'})
@@ -40,6 +40,7 @@ const TableFilter = () => {
         <Card.Header>
           <Field
             label={t('locationName')}
+            value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </Card.Header>

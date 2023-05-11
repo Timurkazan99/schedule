@@ -4,12 +4,19 @@ import ContextProvider from "./components/ContextProvider.jsx";
 import {BrowserRouter} from "react-router-dom";
 import Init from "./init.jsx";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(
-  <ContextProvider>
-    <BrowserRouter>
-      <Init />
-    </BrowserRouter>
-  </ContextProvider>
-);
+const app = async () => {
+  // eslint-disable-next-line no-undef
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  const vdom = await Init();
+
+  root.render(
+    <ContextProvider>
+      <BrowserRouter>
+        {vdom}
+      </BrowserRouter>
+    </ContextProvider>,
+  );
+};
+
+app();

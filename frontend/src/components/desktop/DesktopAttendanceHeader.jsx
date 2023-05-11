@@ -20,9 +20,9 @@ const DesktopAttendanceHeader = () => {
   const formik = useFormik({
     initialValues,
     validationSchema: PeriodSchema,
-    onSubmit: ({startPeriod, endPeriod}) => {
+    onSubmit: (values) => {
       try {
-        dispatch(fetchAttendance(startPeriod, endPeriod));
+        dispatch(fetchAttendance(values));
       } catch ({response}) {
         toast.error(response.data.message)
       }
@@ -34,18 +34,18 @@ const DesktopAttendanceHeader = () => {
       className="d-flex justify-content-between"
       onSubmit={formik.handleSubmit}
     >
-      <Field
-        className="me-1 flex-grow-1"
-        label={t('startPeriod')}
-        name='startPeriod'
-        formik={formik}
-      />
-      <Field
-        className="flex-grow-1"
-        label={t('endPeriod')}
-        name='endPeriod'
-        formik={formik}
-      />
+      <div className="d-flex">
+        <Field
+          type='double'
+          name1='startPeriod'
+          name2='endPeriod'
+          label1={t('startPeriod')}
+          label2={t('endPeriod')}
+          className1='me-1 flex-grow-1'
+          className2='flex-grow-1'
+          formik={formik}
+        />
+      </div>
 
       <div className="my-auto">
         <CustomButton

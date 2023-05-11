@@ -21,7 +21,7 @@ const FormTemplate = ({edit, fixed}) => {
   const dispatch = useDispatch();
   const template = useSelector(getSelectedTemplate);
   const locationId = useSelector((state) => state.locations.selected);
-  const { t } = useTranslation('translation', { keyPrefix: 'template'});
+  const { t } = useTranslation('translation', { keyPrefix: 'templates'});
 
   const formik = useFormik({
     validationSchema: templateSchema,

@@ -134,7 +134,7 @@ const FormEmployee = ({edit}) => {
               }}
               items={locations}
               def={{
-                value: "null",
+                value: null,
                 name: t('emptyLocation')
               }}
             />

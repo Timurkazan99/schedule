@@ -19,7 +19,7 @@ const initialValues = {
 const FormLocation = ({edit}) => {
   const dispatch = useDispatch()
   const location = useSelector((state) => getSelectedLocation(state))
-  const { t } = useTranslation('translation', { keyPrefix: 'shifts'});
+  const { t } = useTranslation('translation', { keyPrefix: 'locations'});
 
   const formik = useFormik({
     initialValues,

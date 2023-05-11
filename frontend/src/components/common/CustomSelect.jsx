@@ -1,21 +1,24 @@
 import React from 'react';
 import {FloatingLabel, Form} from "react-bootstrap";
 
-const CustomSelect = ({className, label, items, def, ...props}) => {
+const CustomSelect = ({className, label, items, def, formik, ...props}) => {
+  console.log(def);
   return (
     <FloatingLabel
-      className={props.className}
-      label={props.label}
+      className={className}
+      label={label}
     >
       <Form.Select
+        value={formik.values[props.name]}
+        onChange={formik.handleChange}
         {...props}
       >
         {
-          props?.def && (
+         def && (
             <option
-              value={String(props.def.value)}
+              value={String(def.value)}
             >
-              {props.def.name}
+              {def.name}
             </option>
           )
         }

@@ -50,6 +50,7 @@ const ru = {
       beginAt: 'Начало смены',
       endAt: 'Конец смены',
       location: 'Локация',
+      break: 'Перерыв',
       template: 'Шаблон',
       bonus: 'Надбавка',
       penalty: 'Штраф',
