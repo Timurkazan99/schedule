@@ -1,5 +1,6 @@
 import { $authHost } from './index';
 import { getPeriod } from '../utils/dates';
+import {HOST, URI} from "../utils/const";
 
 export const createShift = async (shift) => {
   const { data } = await $authHost.post('api/shift/', shift);
@@ -24,8 +25,8 @@ export const getMyShift = async (id) => {
 
 export const getFile = async (startPeriod, endPeriod, location = null) => {
   const url = location
-    ? `${process.env.REACT_APP_API_URL}api/shift/file?startPeriod=${startPeriod}&endPeriod=${endPeriod}&location=${location}`
-    : `${process.env.REACT_APP_API_URL}api/shift/file?startPeriod=${startPeriod}&endPeriod=${endPeriod}`;
+    ? `${HOST}/${URI}/api/shift/file?startPeriod=${startPeriod}&endPeriod=${endPeriod}&location=${location}`
+    : `${HOST}/${URI}/api/shift/file?startPeriod=${startPeriod}&endPeriod=${endPeriod}`;
   const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`,

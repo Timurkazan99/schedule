@@ -4,6 +4,7 @@ import { actions as locationAction } from '../store/reducers/LocationSlice';
 import { actions as templateAction } from '../store/reducers/TemplateSlice';
 import { actions as shiftAction } from '../store/reducers/ShiftSlice';
 import { actions as notificationAction } from '../store/reducers/NotificationSlice';
+import {HOST, URI} from "../utils/const";
 
 /* eslint-disable no-param-reassign */
 export default function useNotification() {
@@ -52,7 +53,7 @@ export default function useNotification() {
     },
   };
   return (token) => {
-    const eventSource = new EventSource(`${process.env.REACT_APP_API_URL}api/notification/${token}`);
+    const eventSource = new EventSource(`${HOST}/${URI}/api/notification/${token}`);
 
     eventSource.onmessage = ({ data }) => {
       const { eventName, ...value } = JSON.parse(data);

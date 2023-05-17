@@ -24,12 +24,14 @@ export const Month = {
   December: 11,
 };
 
-export const PROFILE_ROUTE = '/profile';
-export const LOGIN_ROUTE = '/login';
-export const LOCATION_ROUTE = '/location';
-export const EMPLOYEES_ROUTE = '/employees';
-export const ATTENDANCE_ROUTE = '/attendance';
-export const FORGOT_PASSWORD_ROUTE = '/forgot-password';
-export const RESET_PASSWORD_ROUTE = '/reset-password';
-export const UPLOAD_ROUTE = '/upload';
-export const SCHEDULE_ROUTE = '/';
+export const HOST = process.env.REACT_APP_API_URL;
+export const URI = process.env.REACT_APP_URI || '';
+export const PROFILE_ROUTE = `/${URI}/profile`;
+export const LOGIN_ROUTE = `/${URI}/login`;
+export const LOCATION_ROUTE = `/${URI}/location`;
+export const EMPLOYEES_ROUTE = `/${URI}/employees`;
+export const ATTENDANCE_ROUTE = `/${URI}/attendance`;
+export const FORGOT_PASSWORD_ROUTE = `/${URI}/forgot-password`;
+export const RESET_PASSWORD_ROUTE = `/${URI}/reset-password`;
+export const UPLOAD_ROUTE = `/${URI}/upload`;
+export const SCHEDULE_ROUTE = `/${URI}/`;
