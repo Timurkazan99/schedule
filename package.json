@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build --prefix frontend",
-    "start": "npm start --prefix backend",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-prebuild": "npm i --prefix frontend && npm i --prefix backend"
+    "linter": "npm start linter --prefix frontend"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 import { $authHost } from './index';
 import { getPeriod } from '../utils/dates';
-import {HOST, URI} from "../utils/const";
+import { HOST, URI } from '../utils/const';
 
 export const getResult = async (startPeriod, endPeriod) => {
   const { data } = await $authHost.get(`/api/attendance/?startPeriod=${startPeriod}&endPeriod=${endPeriod}`);

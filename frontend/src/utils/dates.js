@@ -3,7 +3,7 @@ import { DAYS_IN_MONTH, Month } from './const';
 const locale = 'ru-RU';
 const option = { year: 'numeric', day: 'numeric', month: 'numeric' };
 
-export const toLocaleString = (date, option = { weekday: 'short', day: 'numeric', month: 'numeric' }) => new Date(date).toLocaleString(locale, option);
+export const toLocaleString = (date, option = { weekday: 'short', day: 'numeric', month: 'numeric' }) => new Date(date).toLocaleString(locale, option); // eslint-disable-line no-shadow
 
 const isLeapYear = (year) => !((year % 4) || (!(year % 100) && (year % 400)));
 

@@ -1,6 +1,6 @@
 import { $authHost } from './index';
 import { getPeriod } from '../utils/dates';
-import {HOST, URI} from "../utils/const";
+import { HOST, URI } from '../utils/const';
 
 export const createShift = async (shift) => {
   const { data } = await $authHost.post('api/shift/', shift);

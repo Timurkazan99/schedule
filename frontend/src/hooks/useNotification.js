@@ -4,7 +4,7 @@ import { actions as locationAction } from '../store/reducers/LocationSlice';
 import { actions as templateAction } from '../store/reducers/TemplateSlice';
 import { actions as shiftAction } from '../store/reducers/ShiftSlice';
 import { actions as notificationAction } from '../store/reducers/NotificationSlice';
-import {HOST, URI} from "../utils/const";
+import { HOST, URI } from '../utils/const';
 
 /* eslint-disable no-param-reassign */
 export default function useNotification() {

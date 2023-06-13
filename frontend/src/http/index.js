@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {HOST, URI} from "../utils/const";
+import { HOST, URI } from '../utils/const';
 
 const $host = axios.create({
   baseURL: `${HOST}/${URI}`,
