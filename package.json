@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build --prefix frontend",
-    "linter": "npm start linter --prefix frontend"
+    "linter": "npm run linter --prefix frontend"
   },
   "repository": {
     "type": "git",
